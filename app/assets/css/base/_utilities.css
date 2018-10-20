@@ -1,0 +1,92 @@
+/* ACCESSIBILITY */
+/* -------------------------------------------------------------------
+---------------------------------------------------------------------*/
+/* visibility  */
+.u-hide-element {
+    border: 0;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+/* focusable elements for tabbing and skip to content links that should be hidden until keyboard focus */
+
+.u-hide-element--focusable:active,
+.u-hide-element--focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+/*<a class="u-hide-element u-hide-element--focusable" href="#main">Skip to the main content</a>
+<nav>Navigation elements...</nav>
+<main id="main">The main content</main>*/
+
+/* -------------------------------------------------------------------
+----------------------------------------------------------------------*/
+
+
+/*prevent mid-word break*/
+.u-nowrap {
+	white-space: nowrap;
+}
+/* u-contain-x*/
+/*controlling page horizontal breathing space/alignment*/
+.u-contain-x {
+	padding-left: 5.375%;/*0.833em;*/
+	padding-right:5.375%;
+	width: 100%;
+	/*max-width: 75em;*/
+	margin-left: auto;
+	margin-right: auto;
+	@mixin atSmall {
+		/*padding-left: 1.44em;
+		padding-right:1.44em;*/
+	}
+	@mixin atMedium {
+		max-width: 1000px;/*832px;/*52em;*/
+	}
+	@mixin atLarge {
+		
+	}
+	&--fluid {
+		width:100%;
+		padding-left: ;/*0.833em;*/
+		padding-right: ;/*0.833em;*/
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+/* u-body-text-container */
+.u-body-text-container {
+	max-width: 43.5em;
+	margin: auto;
+	@mixin atSmall {
+		max-width:47.5em;
+	}
+	@mixin atLarge {
+		max-width: 53.5em;
+	}
+	p  { 
+	line-height: var(--baseLineHeight);
+		@mixin atSmall {
+			font-size: 1.2em;
+		}
+		@mixin atMedium {
+			font-size: 1.44em;
+		}
+		@mixin atLarge {
+			font-size: 1.728em;
+		}
+	}
+	/* in body links */
+	a {
+
+	}
+}
