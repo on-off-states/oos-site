@@ -1,19 +1,33 @@
 /*global*/
 html {
 	/*set root font-size for rem*/
-	font-size:/*var(--baseFontSize);*/
+	font-size:var(--baseFontSize);
+	box-sizing: border-box;
+}
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 img {
 	max-width: 100%;
 	height: auto;
 }
-* {
-	box-sizing: border-box;
-}
+
 body {
 	font-family: var(--sans-serif);
-	color: var(--base-dark);
-	/*line-height: 1.4;*/
+	color: var(--base-color);
+	background-image: url("/assets/img/background/topography.svg"),
+    linear-gradient(110deg, #f93d66, #6d47d9);
+	background-size: 340px, auto;
+  /*min-height: calc(100vh - 100px);*/
+  background-attachment: fixed;
+  margin: 1em;
 }
 h1,h2,h3,h4,h5,h6 {
 	line-height: 1;
@@ -21,6 +35,7 @@ h1,h2,h3,h4,h5,h6 {
 a {
 	color: inherit;
 }
+
 strong {
 	font-weight: 600;
 }
